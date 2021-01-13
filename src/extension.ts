@@ -118,7 +118,8 @@ const getImagePath = function(filePath: string, localPath: string, selectFilePat
 		}
     } else {
 		imagePath = path.join(folderPath, localPath, imageFileName)
-    }
+	}
+	imagePath = imagePath.replace("\\", "/")
     return imagePath
 }
 

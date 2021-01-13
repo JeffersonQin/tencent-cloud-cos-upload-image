@@ -1,6 +1,6 @@
 # tencent-cloud-cos-upload-image
 
-注：本项目Fork自: ![传送门](https://github.com/Galen-Yip/tencent-cloud-cos-upload-image)
+注：本项目Fork自: [传送门](https://github.com/Galen-Yip/tencent-cloud-cos-upload-image)
 
 VSCode 插件，支持直接在 Markdown 文件中 **粘贴截图** 和 **选择图片** 上传到腾讯云COS，得到文件地址后引用显示，大家直接在本地写 Markdown 时特别实用。
 
