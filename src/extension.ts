@@ -46,6 +46,7 @@ const upload = (progress: vscode.Progress<object>, config: vscode.WorkspaceConfi
 		return createImageDirWithImagePath(imagePath)
 			.then(() => {
 				saveClipboardImageToFileAndGetPath(imagePath, (imagePath: string) => {
+					imagePath = imagePath.replace(/\\/g, '/')
 					if (!imagePath) {
 						return
 					}
