@@ -40,7 +40,7 @@ const upload = (progress: vscode.Progress<object>, config: vscode.WorkspaceConfi
 	const isPaste = !selectFilePath
 	selectFilePath = selectFilePath || `${moment().format('YYYYMMDDHHmmss')}.png`
 	let mdFilePath = editor.document.uri.fsPath
-	let imagePath = getImagePath(mdFilePath, config.localPath, selectFilePath)
+	let imagePath = getImagePath(mdFilePath, config.localPath, selectFilePath).replace(/\\/g, '/')
 	
 	if (isPaste) {
 		return createImageDirWithImagePath(imagePath)
@@ -119,7 +119,7 @@ const getImagePath = function(filePath: string, localPath: string, selectFilePat
     } else {
 		imagePath = path.join(folderPath, localPath, imageFileName)
 	}
-	imagePath = imagePath.replace("\\", "/")
+	imagePath = imagePath.replace(/\\/g, '/')
     return imagePath
 }
 
