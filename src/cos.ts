@@ -50,7 +50,8 @@ export default function (config: vscode.WorkspaceConfiguration, imagePath: strin
         getMD5(localFile)
             .then((md5) => {
                 const extname = path.extname(localFile);
-                const remoteFile = path.join(config.remotePath, `${moment().format('YYYYMMDDHHmmss')}_${md5}${extname}`)
+                var remoteFile: String = path.join(config.remotePath, `${moment().format('YYYYMMDDHHmmss')}_${md5}${extname}`)
+                remoteFile = remoteFile.replace("\\", "/")
                 cos = cos || initInstance(config)
 
                 cos.putObject({
